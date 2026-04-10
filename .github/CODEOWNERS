@@ -1,0 +1,9 @@
+# These owners will be the default owners for everything in the repo.
+* @nilupulk
+
+# Documentation experts will review anything in the docs folder
+/docs/ @nilupulk
+
+# Core and templates
+/packages/ @nilupulk
+/templates/ @nilupulk
