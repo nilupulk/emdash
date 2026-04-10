@@ -1,5 +1,7 @@
 # EmDash
 
+[![NPM Version](https://img.shields.io/npm/v/emdash)](https://www.npmjs.com/package/emdash) [![CI/CD](https://img.shields.io/github/actions/workflow/status/nilupulk/emdash/test.yml?branch=main)](https://github.com/nilupulk/emdash/actions/workflows/test.yml) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![Discord](https://img.shields.io/discord/123456789012345678?label=Discord&logo=discord)](https://discord.gg/emdash)
+
 A full-stack TypeScript CMS built on [Astro](https://astro.build/) and [Cloudflare](https://www.cloudflare.com/). EmDash takes the ideas that made WordPress dominant -- extensibility, admin UX, a plugin ecosystem -- and rebuilds them on serverless, type-safe foundations. Plugins run in sandboxed Worker isolates, solving the fundamental security problem with WordPress's plugin architecture.
 
 ## Get Started
@@ -101,6 +103,20 @@ export default () =>
 **Runs anywhere.** EmDash uses portable abstractions at every layer -- Kysely for SQL, S3 API for storage -- that work with SQLite, D1, Turso, PostgreSQL, R2, AWS S3, or local files. It runs best on Cloudflare, but it's not locked to it.
 
 ## How It Works
+
+```mermaid
+graph TD
+    A[EmDash Core / Astro] -->|Query| B(Cloudflare D1 Database)
+    A -->|Static Assets| C(Cloudflare R2 Storage)
+    A -->|Session Data| D(Cloudflare KV)
+    
+    subgraph Sandboxed Ecosystem
+    E[Dynamic Worker Loader] --> F[Plugin 1]
+    E --> G[Plugin 2]
+    end
+    
+    A <-->|Authorized Exec| E
+```
 
 EmDash is an Astro integration. Add it to your config and you get a complete CMS: admin panel, REST API, authentication, media library, and plugin system.
 
