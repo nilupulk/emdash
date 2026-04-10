@@ -4,6 +4,17 @@
 
 A full-stack TypeScript CMS built on [Astro](https://astro.build/) and [Cloudflare](https://www.cloudflare.com/). EmDash takes the ideas that made WordPress dominant -- extensibility, admin UX, a plugin ecosystem -- and rebuilds them on serverless, type-safe foundations. Plugins run in sandboxed Worker isolates, solving the fundamental security problem with WordPress's plugin architecture.
 
+## Table of Contents
+- [Get Started](#get-started)
+- [Templates](#templates)
+- [Why EmDash?](#why-emdash)
+- [How It Works](#how-it-works)
+- [Features](#features)
+- [Portable Platforms](#portable-platforms)
+- [Status](#status)
+- [Development](#development)
+- [Repository Structure](#repository-structure)
+
 ## Get Started
 
 > [!IMPORTANT]
