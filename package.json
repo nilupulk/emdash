@@ -27,6 +27,9 @@
 		"screenshots": "node scripts/screenshot-all-templates.mjs",
 		"prepare": "husky"
 	},
+	"lint-staged": {
+		"*": "prettier --write --ignore-unknown"
+	},
 	"keywords": [],
 	"author": "Matt Kane",
 	"license": "MIT",
